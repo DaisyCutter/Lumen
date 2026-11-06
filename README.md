@@ -2,6 +2,8 @@
 
 An independent, native macOS menu-bar system monitor built with Swift, SwiftUI, AppKit and Swift Charts. Requires **macOS 14 or later**. Builds for Apple Silicon and Intel. No package dependencies, account, subscription, licence validation, telemetry, outbound requests or server dependency. All history is in memory; preferences are local UserDefaults.
 
+**[Visit the Lumen product page](https://daisycutter.github.io/Lumen/)** · [Download the latest app](https://github.com/DaisyCutter/Lumen/releases/latest/download/Lumen.zip)
+
 ## Get the source
 
 ```sh
@@ -25,7 +27,7 @@ open .build/Build/Products/Release/Lumen.app
 
 `build.sh` builds a universal Release app and signs it ad hoc for local use. You can copy that app to Applications yourself. In Xcode, if signing asks for a team, set Signing Certificate to **Sign to Run Locally**, or use the script. There are no entitlements or additional permissions to configure. App Sandbox is disabled because system-wide process inspection is part of the functionality; the app does not request administrator access.
 
-For distributing beyond your own Mac, configure your own bundle identifier and Developer ID signing, then archive and notarize using your Apple developer account. The supplied local build is **not notarized**. It does not include an updater.
+For distributing beyond your own Mac, configure your own bundle identifier and Developer ID signing, then archive and notarize using your Apple developer account. The supplied local build is **not notarized**. It does not include an updater. If macOS blocks the downloaded app, see [Apple’s guidance on opening apps safely](https://support.apple.com/en-gb/102445).
 
 To display the same dashboard in a conventional window for inspection:
 
