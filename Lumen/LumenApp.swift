@@ -118,7 +118,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 right(s.battery.map { Format.percent($0.charge) } ?? "—", y: 7, size: 9)
             case .sensors:
                 label("TMP")
-                text("♨", 15, 6, 10, .systemTeal)
+                NSColor.systemTeal.setStroke()
+                let stem = NSBezierPath(roundedRect: NSRect(x: 20, y: 8, width: 3.5, height: 11), xRadius: 1.75, yRadius: 1.75)
+                stem.lineWidth = 1; stem.stroke()
+                let bulb = NSBezierPath(ovalIn: NSRect(x: 19, y: 5, width: 5.5, height: 5.5))
+                bulb.lineWidth = 1; bulb.stroke()
+                NSColor.systemTeal.setFill()
+                NSBezierPath(roundedRect: NSRect(x: 21.1, y: 7, width: 1.3, height: 8), xRadius: 0.6, yRadius: 0.6).fill()
                 right(s.chipTemperature.map { "\(Int($0.rounded()))°" } ?? "N/A", y: 7, size: 8)
             case .overview: break
             }
